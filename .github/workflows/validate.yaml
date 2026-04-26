@@ -1,0 +1,14 @@
+name: Pull Request validation
+
+on: [pull_request]
+
+
+jobs:
+  savings-pot-demo-contracts-ci:
+    name: Run savings-pot-demo-contracts validation
+    uses: ./.github/workflows/savings-pot-demo-contracts-ci.yaml
+
+  savings-pot-demo-frontend-ci:
+    name: Run savings-pot-demo-frontend validation
+    uses: ./.github/workflows/savings-pot-demo-frontend-ci.yaml
+

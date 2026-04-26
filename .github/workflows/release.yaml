@@ -1,0 +1,38 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'docs/**'
+      - '**.md'
+      - '.vscode/**'
+      - '.idea/**'
+
+permissions:
+  contents: read
+  packages: read
+
+jobs:
+  savings-pot-demo-contracts-validate:
+    name: Run savings-pot-demo-contracts release
+    secrets: inherit
+    uses: ./.github/workflows/savings-pot-demo-contracts-ci.yaml
+
+  savings-pot-demo-contracts-release:
+    name: Run savings-pot-demo-contracts release
+    secrets: inherit
+    uses: ./.github/workflows/savings-pot-demo-contracts-cd.yaml
+    needs: savings-pot-demo-contracts-validate
+
+  savings-pot-demo-frontend-validate:
+    name: Run savings-pot-demo-frontend release
+    secrets: inherit
+    uses: ./.github/workflows/savings-pot-demo-frontend-ci.yaml
+
+  savings-pot-demo-frontend-release:
+    name: Run savings-pot-demo-frontend release
+    secrets: inherit
+    uses: ./.github/workflows/savings-pot-demo-frontend-cd.yaml
+    needs: savings-pot-demo-frontend-validate
