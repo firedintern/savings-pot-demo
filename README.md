@@ -1,5 +1,13 @@
 # savings-pot-demo
 
+A group savings app built on the Algorand blockchain. Members join a shared pot and deposit ALGO into it — the contract tracks the total deposited and member count fully on-chain.
+
+## Demo
+
+https://github.com/firedintern/savings-pot-demo/raw/main/demo/demo.mp4
+
+> [▶ Watch the demo](demo/demo.mp4)
+
 This starter full stack project has been generated using AlgoKit. See below for default getting started instructions.
 
 ## Setup

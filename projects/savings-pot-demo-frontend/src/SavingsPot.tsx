@@ -24,7 +24,7 @@ const APP_ID = BigInt(import.meta.env.VITE_APP_ID ?? '0')
 // ── LocalNet AlgorandClient ───────────────────────────────────────────────────
 const algorand = AlgorandClient.fromConfig({
   algodConfig: { server: 'http://localhost', port: 4001, token: 'a'.repeat(64) },
-  kmdConfig:   { server: 'http://localhost', port: 7833, token: 'a'.repeat(64) },
+  kmdConfig:   { server: 'http://localhost', port: Number(import.meta.env.VITE_KMD_PORT ?? 4002), token: 'a'.repeat(64) },
 })
 
 const KMD_WALLET = 'unencrypted-default-wallet'
